@@ -20,7 +20,7 @@ export default {
         let res = await fetch(url)
         if (res.ok) {
             let text = await res.text()
-            return {data: text, status: true}
+            return {data: JSON.parse(text), status: true}
         } else {
             return  {data: `HTTP error: ${res.status}`, status: false}
         }
